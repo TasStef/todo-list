@@ -1,6 +1,6 @@
 # todo-list
 
-Todo-list website, 
+Todo-list website.
 
 ## Website:
 
