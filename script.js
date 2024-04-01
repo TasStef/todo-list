@@ -2,7 +2,7 @@ function createListElement() {
   var li = document.createElement("li");
   li.appendChild(document.createTextNode(input.value));
   ul.appendChild(li);
-  li.appendChild(addButtonDone());
+  li.addEventListener("click", lineThroughTask);
   input.value = "";
 }
 
@@ -19,24 +19,14 @@ function addListAfterEnter(event) {
 }
 
 function lineThroughTask(event) {
-  var buttonDone = event.target;
-  var listItem = buttonDone.parentNode;
-  var listClasses = listItem.classList;
+  var item = event.target;
+  var itemClasses = item.classList;
 
-  if (listClasses.contains("done")) {
-    listItem.classList.remove("done");
-    buttonDone.textContent = "Done";
+  if (itemClasses.contains("done")) {
+    itemClasses.remove("done");
   } else {
-    listItem.classList.add("done");
-    buttonDone.textContent = "Undone";
+    itemClasses.add("done");
   }
-}
-
-function addButtonDone() {
-  var buttonDone = document.createElement("button");
-  buttonDone.textContent = "Done";
-  buttonDone.addEventListener("click", lineThroughTask);
-  return buttonDone;
 }
 
 // Cashing the elements that we need
@@ -45,9 +35,9 @@ var button = document.getElementsByClassName("enter")[0];
 var ul = document.querySelector("ul");
 var listItems = document.querySelectorAll("li");
 
-button.addEventListener("click", addListAfterClick); // callback function
-input.addEventListener("keydown", addListAfterEnter); // callback function
+button.addEventListener("click", addListAfterClick);
+input.addEventListener("keydown", addListAfterEnter);
 
-for (var item of listItems) {
-  item.appendChild(addButtonDone());
-}
+listItems.forEach(function (item) {
+  item.addEventListener("click", lineThroughTask);
+});

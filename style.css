@@ -1,29 +1,68 @@
+@font-face {
+  font-family: "pencil";
+  src: url("sketch-pencil-demo\\SketchPencilDemoRegular.ttf");
+}
+
+html {
+  background: url("sj-objio-XFWiZTa2Ub0-unsplash.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+body {
+  font-family: "pencil";
+  font-size: 3rem;
+}
+
 .coolTitle {
-  text-align: center;
-  font-family: 'Oswald', Helvetica, sans-serif;
-  font-size: 40px;
-  transform: skewY(-10deg);
+  transform: skewY(-7deg);
   letter-spacing: 4px;
   word-spacing: -8px;
-  color: tomato;
-  text-shadow:
-    -1px -1px 0 firebrick,
-    -2px -2px 0 firebrick,
-    -3px -3px 0 firebrick,
-    -4px -4px 0 rgb(8, 206, 255),
-    -5px -5px 0 firebrick,
-    -6px -6px 0 firebrick,
-    -7px -7px 0 firebrick,
-    -8px -8px 0 firebrick,
-    -30px 20px 40px dimgrey;
+  margin-top: 5%;
+  margin-bottom: 0%;
+  font-weight: bold;
+}
+
+.instructions{
+  font-weight: 600;
+  margin-top: 3%;
+}
+
+.container{
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+
+}
+
+
+
+#userInput{
+  width: 20rem;
+  height: 2rem;
+  font-weight: bold;
+  background-color: rgba(240, 248, 255, 0.123);
+}
+
+button{
+
+  background-color: #b7b6629f ;
+}
+
+.input-container{
+  display: flex;
 }
 
 .done {
   text-decoration: line-through;
 }
 
-li > button{
-  /* padding: 0.75rem; */
-  box-shadow: 1.5rem 0.25rem 1rem 0.1rem rgba(8, 206, 255, 0.349);
+li{
+  font-weight: 500;
+  text-shadow: 0.25rem 0rem 0.45rem rgb(0, 0, 0);
 
 }
+
+li:hover{
+  cursor: pointer;
+}
+
