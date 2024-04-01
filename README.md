@@ -1,6 +1,6 @@
 # todo-list
 
-Todo-list website.
+Todo-list website. Add items and cross them over by clicking on them.
 
 ## Website:
 
